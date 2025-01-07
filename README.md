@@ -18,7 +18,7 @@ Finans Dostum, kişisel finans yönetimi için tasarlanmış modern ve kullanıc
 
 📸 Ekran Görüntüleri
 
-<img src="https://https://github.com/user-attachments/assets/eb23c85d-ae59-4ab2-8ca9-08910556013e" alt="Screenshot" width="300"/>
+<img src="https://github.com/user-attachments/assets/eb23c85d-ae59-4ab2-8ca9-08910556013e" alt="Screenshot" width="300"/>
 
 
 
