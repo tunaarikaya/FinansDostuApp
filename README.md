@@ -18,7 +18,7 @@ Finans Dostum, kişisel finans yönetimi için tasarlanmış modern ve kullanıc
 
 📸 Ekran Görüntüleri
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-07 at 19 24 07](https://github.com/user-attachments/assets/eb23c85d-ae59-4ab2-8ca9-08910556013e)
-
+<img src="https://user-images.githubusercontent.com/123456789/your-image.png" alt="Screenshot" width="300"/>
 
 
 
