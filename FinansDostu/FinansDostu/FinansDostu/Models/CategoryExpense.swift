@@ -1,5 +1,5 @@
 import Foundation
-//21qq
+//21q
 public struct CategoryExpense: Identifiable, Equatable {
     public let id: UUID
     public let category: String
