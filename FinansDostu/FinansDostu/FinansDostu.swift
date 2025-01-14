@@ -1,6 +1,6 @@
 import SwiftUI
 
-//2
+//2w
 struct FinansDostu: App {
     @StateObject private var viewModel = MainViewModel()
     
