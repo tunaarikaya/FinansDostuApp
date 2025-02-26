@@ -293,12 +293,13 @@ public class MainViewModel: ObservableObject {
         type: Transaction.TransactionType,
         category: String,
         date: Date,
-        note: String? = nil
+        note: String? = nil,
+        transactionID: UUID? = nil
     ) {
         let context = persistenceController.container.viewContext
         let entity = TransactionEntity(context: context)
         
-        entity.id = UUID()
+        entity.id = transactionID ?? UUID()
         entity.title = title
         entity.amount = amount
         entity.type = type.rawValue
@@ -467,27 +468,28 @@ public class MainViewModel: ObservableObject {
         .sorted { $0.amount > $1.amount }
     }
     
-    /// Vadesi geçen ve ödenmemiş ödemeleri kontrol eder
+    /// Vadesi geçen ödemeleri kontrol eder (ödenenler ve ödenmeyenler dahil)
     func checkOverduePayments() {
         let today = Date()
         let calendar = Calendar.current
         
-        // Bütün planlı ödemeler içinde vadesi geçmiş ve ödenmemiş olanları filtrele
+        // Bütün planlı ödemeler içinde vadesi geçmiş olanları filtrele (ödendi durumlarını dikkate almadan)
         let overdue = plannedPayments.filter { payment in
             let startOfDueDate = calendar.startOfDay(for: payment.dueDate)
             let startOfToday = calendar.startOfDay(for: today)
-            return !payment.isPaid && startOfDueDate <= startOfToday
+            return startOfDueDate <= startOfToday
         }
         
         // Ana thread'de UI güncelleme
         DispatchQueue.main.async { [weak self] in
             self?.overduePayments = overdue
             
-            // Vadesi geçmiş ödemeler varsa bildirim göster
-            if !overdue.isEmpty {
+            // Vadesi geçmiş ödenmemiş ödemeler varsa bildirim göster
+            let unpaidOverdueCount = overdue.filter { !$0.isPaid }.count
+            if unpaidOverdueCount > 0 {
                 #if DEBUG
-                print("Vadesi geçmiş \(overdue.count) adet ödeme bulundu")
-                for payment in overdue {
+                print("Vadesi geçmiş \(unpaidOverdueCount) adet ödenmemiş ödeme bulundu")
+                for payment in overdue.filter({ !$0.isPaid }) {
                     print("- \(payment.title): \(payment.amount.formattedCurrency()) (\(payment.dueDate.formatted()))")
                 }
                 #endif
@@ -508,30 +510,75 @@ public class MainViewModel: ObservableObject {
     
     // Planlı ödeme tamamlandığında işlem oluştur ve bakiyeyi güncelle
     func markPaymentAsCompleted(_ payment: PlannedPayment) {
-        updatePlannedPayment(PlannedPayment(
-            id: payment.id,
-            title: payment.title,
-            amount: payment.amount,
-            dueDate: payment.dueDate,
-            isPaid: true,
-            note: payment.note,
-            notificationPreferences: payment.notificationPreferences,
-            isRecurring: payment.isRecurring,
-            recurringInterval: payment.recurringInterval
-        ))
-        
-        // Otomatik olarak bir gider işlemi oluştur
+        // Önce işlem oluştur
+        let transactionID = UUID()
         addTransaction(
             title: payment.title,
             amount: payment.amount,
             type: .expense,
             category: "Planlı Ödeme",
             date: Date(),
-            note: "Planlı ödeme: \(payment.title)"
+            note: "Planlı ödeme: \(payment.title)",
+            transactionID: transactionID
         )
         
-        // Bakiye otomatik olarak updateBalance() fonksiyonu ile güncellenecek
-        // çünkü addTransaction zaten updateBalance()'i çağırıyor
+        // İşlem ID'sini içeren bir not oluştur
+        let paymentNote = payment.note ?? ""
+        let updatedNote = paymentNote + (paymentNote.isEmpty ? "" : "\n") + "__PAYMENT_TX_ID__:" + transactionID.uuidString
+        
+        // Ödemeyi güncelle ve işlem ID'sini not kısmında sakla
+        updatePlannedPayment(PlannedPayment(
+            id: payment.id,
+            title: payment.title,
+            amount: payment.amount,
+            dueDate: payment.dueDate,
+            isPaid: true,
+            note: updatedNote,
+            notificationPreferences: payment.notificationPreferences,
+            isRecurring: payment.isRecurring,
+            recurringInterval: payment.recurringInterval
+        ))
+    }
+    
+    // Ödeme işaretini kaldır ve ilgili işlemi sil
+    func unmarkPaymentAsCompleted(_ payment: PlannedPayment) {
+        // İlgili işlem ID'sini not kısmından çıkar
+        var updatedNote = payment.note ?? ""
+        var transactionIDString: String?
+        
+        // Not kısmında işlem ID kontrolü
+        if let note = payment.note, note.contains("__PAYMENT_TX_ID__:") {
+            let components = note.components(separatedBy: "__PAYMENT_TX_ID__:")
+            if components.count > 1 {
+                // İşlem ID'sini al
+                transactionIDString = components[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                // Notu güncelle ve işlem ID bilgisini kaldır
+                updatedNote = components[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+        }
+        
+        // İşlemi bul ve sil
+        if let txIDString = transactionIDString, let transactionID = UUID(uuidString: txIDString) {
+            // İşlemi silmek için tüm işlemleri kontrol et
+            let matchingTransaction = transactions.first { $0.id == transactionID }
+            if let transaction = matchingTransaction {
+                deleteTransaction(transaction)
+            }
+        }
+        
+        // Ödemeyi güncelle - işareti kaldır
+        updatePlannedPayment(PlannedPayment(
+            id: payment.id,
+            title: payment.title,
+            amount: payment.amount,
+            dueDate: payment.dueDate,
+            isPaid: false,
+            note: updatedNote.isEmpty ? nil : updatedNote,
+            notificationPreferences: payment.notificationPreferences,
+            isRecurring: payment.isRecurring,
+            recurringInterval: payment.recurringInterval
+        ))
     }
     
     func schedulePaymentNotifications(for payment: PlannedPayment) {

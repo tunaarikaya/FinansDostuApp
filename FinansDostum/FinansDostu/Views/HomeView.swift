@@ -363,18 +363,35 @@ struct OverduePaymentsAlert: View {
                     }
                     .padding(.vertical, 4)
                     
-                    Button(action: {
-                        viewModel.markPaymentAsCompleted(payment)
-                    }) {
-                        Text("Ödendi Olarak İşaretle")
-                            .font(.caption)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 4)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                    HStack {
+                        Spacer()
+                        
+                        if payment.isPaid {
+                            Button(action: {
+                                viewModel.unmarkPaymentAsCompleted(payment)
+                            }) {
+                                Text("Ödeme İşaretini Kaldır")
+                                    .font(.caption)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 4)
+                                    .background(Color.orange)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                        } else {
+                            Button(action: {
+                                viewModel.markPaymentAsCompleted(payment)
+                            }) {
+                                Text("Ödendi Olarak İşaretle")
+                                    .font(.caption)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 4)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                        }
                     }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
                     
                     if payment.id != payments.prefix(3).last?.id {
                         Divider()
@@ -418,20 +435,34 @@ struct AllOverduePaymentsView: View {
                     HStack {
                         Text(payment.amount.formattedCurrency())
                             .font(.subheadline)
-                            .foregroundColor(.red)
+                            .foregroundColor(payment.isPaid ? .green : .red)
                         
                         Spacer()
                         
-                        Button(action: {
-                            viewModel.markPaymentAsCompleted(payment)
-                        }) {
-                            Text("Ödendi Olarak İşaretle")
-                                .font(.caption)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
+                        if payment.isPaid {
+                            Button(action: {
+                                viewModel.unmarkPaymentAsCompleted(payment)
+                            }) {
+                                Text("Ödeme İşaretini Kaldır")
+                                    .font(.caption)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color.orange)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                        } else {
+                            Button(action: {
+                                viewModel.markPaymentAsCompleted(payment)
+                            }) {
+                                Text("Ödendi Olarak İşaretle")
+                                    .font(.caption)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
                         }
                     }
                 }
