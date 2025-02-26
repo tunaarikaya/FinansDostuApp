@@ -1,0 +1,236 @@
+## Proje Yapısı ve Kurallar
+
+### Mimari
+- SwiftUI ile MVVM mimarisi kullanılacak
+- Features/ ve Core/ ana klasörleri altında modüler yapı
+- Protocol Oriented Programming prensiplerine uygun geliştirme
+- Dependency Injection kullanımı
+
+### Kod Standartları
+- Swift'in en güncel özellikleri tercih edilecek
+- Class yerine Struct kullanımı öncelikli olacak
+- Clean Code prensipleri gözetilecek
+- Açıklayıcı değişken/fonksiyon isimlendirmeleri
+
+### UI/UX
+- Apple Human Interface Guidelines takip edilecek
+- Responsive ve adaptif tasarım
+- Dark/Light mode desteği
+- Accessibility standartlarına uygunluk
+
+### Modüller
+1. Authentication
+   - Kullanıcı girişi/kaydı
+   - Profil yönetimi
+
+2. Dashboard
+   - Bakiye görüntüleme
+   - Özet istatistikler
+   - Grafikler
+
+3. Transactions
+   - Gelir/gider işlemleri
+   - Kategori yönetimi
+   - Filtreleme
+
+4. Scheduled Payments
+   - Tekrarlayan ödemeler
+   - Hatırlatmalar
+   - Ödeme takibi
+
+5. Reports
+   - Detaylı analizler
+   - Export özellikleri
+
+### Veri Yönetimi
+- CoreData kullanımı
+- CRUD işlemleri
+- Bakiye hesaplama mekanizması
+- Veri senkronizasyonu
+
+
+
+# iOS Geliştirici Kılavuzu
+Swift ve SwiftUI kullanan uzman bir iOS geliştiricisin. Aşağıdaki yönergeleri tak
+ip et:
+## Kod Yapısı
+- Swift'in en güncel özelliklerini kullanın
+- Sınıflar yerine mümkün olduğunca değer tiplerini (struct) tercih edin
+- SwiftUI ile MVVM mimarisini kullanın
+- Apple'ın Human Interface Guidelines'ına uygun proje geliştirmeye çalışın
+## İsimlendirme
+- Değişkenler/fonksiyonlar için camelCase, tipler için PascalCase kullanın
+- Metotlar için fiil kullanın (fetchData)
+- Boolean değişkenler için is/has örnekleri kullanın
+- Apple stiline uygun net, açıklayıcı isimler kullanın
+## Swift En İyi Uygulamalar
+- Güçlü tip sistemi, uygun optional kullanımı yapın
+- Eşzamanlılık için async/await kullanın
+- Hatalar için Result tipi kullanın
+- Durum yönetimi için @Published, @StateObject
+- var yerine olabildiğince let tercih edin
+## Arayüz Geliştirme
+- Öncelikle SwiftUI, zorunlu ise UIKit kullanın
+- İkonlar için SF Symbols kullanın
+- Karanlık mod ve dinamik yazı tipi desteği kullanın
+- Ekran düzeni için SafeArea ve GeometryReader kullanın
+- Tüm ekran boyutlarını destekleyin
+- Uygun klavye yönetimi kullanın
+## Performans
+
+### Görüntü ve UI Optimizasyonu
+- LazyVStack/LazyHStack kullanımı zorunlu
+- Görsel assets'ler için lazy loading implementasyonu
+- View yaşam döngüsü optimizasyonu
+- Gereksiz view render'ların önlenmesi
+- PreferenceKey kullanımı ile verimli view güncellemeleri
+
+### Bellek Yönetimi
+- ARC (Automatic Reference Counting) optimizasyonu
+- Weak/Unowned referansların doğru kullanımı
+- Bellek sızıntılarının önlenmesi
+- Büyük veri setleri için pagination implementasyonu
+- Cache mekanizmalarının etkin kullanımı
+
+### State Management
+- @StateObject ve @ObservedObject doğru kullanımı
+- Combine framework ile reaktif programlama
+- ViewStore pattern implementasyonu
+- Global state için özel store yapısı
+- State değişikliklerinde gereksiz render'ların önlenmesi
+
+### Arka Plan İşlemleri
+- DispatchQueue optimizasyonu
+- Background task scheduling
+- Uzun süren işlemler için async/await kullanımı
+- Operation queue yönetimi
+- Background fetch optimizasyonu
+
+### Veri Tabanı Performansı
+- CoreData batch işlemleri
+- İndeksleme stratejileri
+- Fetch request optimizasyonu
+- Relationship prefetching
+- NSFetchedResultsController verimli kullanımı
+
+### Ağ İstekleri
+- URLSession shared instance optimizasyonu
+- Request caching stratejileri
+- Concurrent request yönetimi
+- Response compression
+- Retry mekanizması implementasyonu
+
+### Animasyon ve Geçişler
+- Core Animation optimizasyonu
+- Hardware-accelerated animasyonlar
+- Frame drop önleme stratejileri
+- Smooth scrolling implementasyonu
+- Geçiş animasyonlarında performans optimizasyonu
+
+### Monitoring ve Profiling
+- Instruments kullanımı
+- Time Profiler analizi
+- Memory Graph Debugger takibi
+- Network request analizi
+- UI responsiveness ölçümü
+
+### Uygulama Başlangıç Performansı
+- Launch time optimizasyonu
+- Prewarming stratejileri
+- Asset catalog optimizasyonu
+- Dynamic library loading optimizasyonu
+- Initial route optimizasyonu
+
+
+## Veri ve Durum Yönetimi
+- Karmaşık modeller için gerekli ise CoreData kullanın
+- Tercihler için UserDefaults kullanın
+- Uygun bağımlılık enjeksiyonu kullanın
+## Güvenlik
+- Hassas veriler için şifreleme kullanının
+- Girdi doğrulama kullanın
+## Test ve Kalite
+
+- Hata senaryolarını test edin
+## Temel Özellikler
+- Analitik/loglama kullanın
+## Geliştirme Süreci
+- SwiftUI önizlemeleri kullanın
+- Yorum satırları ekleyin
+
+## Proje Geliştirme ve Yönetim Standartları
+
+### 🏗 Proje Değişiklik Yönetimi
+- Mevcut kod yapısını koruma önceliği
+- Gereksiz dosya/klasör oluşturmaktan kaçınma
+- Modüler yapıyı bozmadan geliştirme
+- İnkremental değişiklik yaklaşımı
+
+### 📝 Proje Yapılandırma
+- Gerekli tüm kütüphanelerin doğru implementasyonu
+- Package dependency yönetimi
+- Build configuration optimizasyonu
+- Environment yönetimi
+
+### 🚀 Geliştirme Standartları
+- MVVM mimari pattern implementasyonu
+- SOLID prensiplerine kesin uyum
+- Clean Code prensipleri
+- Açıklayıcı kod dokümantasyonu
+- Tek sorumluluk prensibine bağlılık
+
+### 🔒 Güvenlik Protokolleri
+- API güvenlik katmanı
+- Veri şifreleme standartları
+- Input validasyon mekanizmaları
+- Secure storage implementasyonu
+- Authentication/Authorization kontrolleri
+
+### ⚡ Performans Optimizasyonu
+- Memory leak prevention
+- Döngü ve algoritma optimizasyonu
+- Database query optimization
+- Caching stratejileri
+- Resource management
+
+### 🐛 Hata Yönetimi
+- Stratejik error handling
+- Logging mekanizması
+- Custom error types
+- User-friendly hata mesajları
+- Crash reporting sistemi
+
+### 🔄 Sürdürülebilirlik
+- Genişletilebilir kod yapısı
+- Code reusability
+- Dependency Injection pattern
+- Interface segregation
+- Modüler yapı
+
+### 📖 Dokümantasyon
+- Markdown formatında kod dokümantasyonu
+- API documentation
+- README dosya standartları
+- Setup guide
+- Deployment documentation
+
+### 🎨 UI/UX Standartları
+- Responsive design implementation
+- Progress indication
+- User feedback mekanizmaları
+- Consistent UI elements
+- Accessibility standartları
+
+### 🧪 Test Stratejisi
+- Unit test coverage
+- UI test implementation
+- Integration testleri
+- Performance testleri
+- Continuous Integration
+
+### 📱 Platform Uyumluluğu
+- iOS version compatibility
+- Device compatibility
+- Orientation support
+- Dynamic type support
+- Localization standartları
