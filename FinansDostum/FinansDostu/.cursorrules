@@ -51,8 +51,6 @@
 
 
 # iOS Geliştirici Kılavuzu
-Swift ve SwiftUI kullanan uzman bir iOS geliştiricisin. Aşağıdaki yönergeleri tak
-ip et:
 ## Kod Yapısı
 - Swift'in en güncel özelliklerini kullanın
 - Sınıflar yerine mümkün olduğunca değer tiplerini (struct) tercih edin
