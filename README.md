@@ -1,4 +1,4 @@
-Finans Dostum
+Finans Dostumm
 
 Finans Dostum, kişisel finans yönetimi için tasarlanmış modern ve kullanıcı dostu bir mobil uygulamadır. Bu uygulama, gelir ve giderlerinizi kolayca takip etmenize, bütçe oluşturmanıza ve finansal hedeflerinize ulaşmanıza yardımcı olur.
 
