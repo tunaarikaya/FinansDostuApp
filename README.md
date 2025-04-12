@@ -48,11 +48,15 @@ FinansDostum/
 ## 📸 Ekran Görüntüsü
 
 <p float="left">
+   <img width="250" alt="Screenshot 5" src="https://github.com/user-attachments/assets/0eaeeb15-e6b0-4afa-be67-033e222f3a30" />
+   <img width="250" alt="Screenshot 4" src="https://github.com/user-attachments/assets/5fee9962-b71d-445e-998f-4cd0e3977644" />
+   <img width="250" alt="Screenshot 3" src="https://github.com/user-attachments/assets/f15acd8c-e48c-4f76-9d6a-41fa448e9959" />
+   <img width="250" alt="Screenshot 2" src="https://github.com/user-attachments/assets/9603dc2b-08de-4dd5-8622-13b6aba5c0ce" />
   <img width="250" alt="Screenshot 1" src="https://github.com/user-attachments/assets/95f579a9-8e9f-438a-b7d4-feec793a494f" />
-  <img width="250" alt="Screenshot 2" src="https://github.com/user-attachments/assets/9603dc2b-08de-4dd5-8622-13b6aba5c0ce" />
-  <img width="250" alt="Screenshot 3" src="https://github.com/user-attachments/assets/f15acd8c-e48c-4f76-9d6a-41fa448e9959" />
-  <img width="250" alt="Screenshot 4" src="https://github.com/user-attachments/assets/5fee9962-b71d-445e-998f-4cd0e3977644" />
-  <img width="250" alt="Screenshot 5" src="https://github.com/user-attachments/assets/0eaeeb15-e6b0-4afa-be67-033e222f3a30" />
+ 
+ 
+ 
+ 
 </p>
 
 ---
