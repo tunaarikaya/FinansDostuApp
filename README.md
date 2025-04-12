@@ -37,12 +37,28 @@
 
 ## 🧩 Proje Yapısı
 FinansDostum/
-├── Models/          # Harcama, kategori, bütçe gibi veri modelleri
-├── Views/           # SwiftUI arayüz bileşenleri
-├── ViewModels/      # Ekran mantığı, veri işleme ve Combine entegrasyonu
-├── Core/            # Yardımcı sınıflar, veri yöneticileri, renk temaları
-├── Resources/       # Renk paletleri, sabitler, lokalizasyon desteği
-
+├── Models/           # Harcama, kategori, bütçe gibi veri modelleri
+│   ├── Harcama.swift  # Harcama modelini tanımlar
+│   └── Kategori.swift # Kategori modelini tanımlar
+│
+├── Views/            # SwiftUI arayüz bileşenleri
+│   ├── AnaSayfaView.swift  # Ana sayfa görünümleri
+│   ├── HarcamaListView.swift # Harcama listesi ve detayları
+│   └── BütçeView.swift      # Bütçe görünümleri
+│
+├── ViewModels/       # Ekran mantığı, veri işleme ve Combine entegrasyonu
+│   ├── AnaSayfaViewModel.swift # Ana sayfa iş mantığı
+│   ├── HarcamaViewModel.swift  # Harcama verilerini yöneten ViewModel
+│   └── BütçeViewModel.swift    # Bütçe yönetimini sağlayan ViewModel
+│
+├── Core/             # Yardımcı sınıflar, veri yöneticileri, renk temaları
+│   ├── RenkYönetimi.swift  # Uygulama renk yönetimi
+│   ├── VeriYöneticisi.swift # Core Data işlemleri
+│   └── Yardımcı.swift       # Genel yardımcı fonksiyonlar
+│
+├── Resources/        # Renk paletleri, sabitler, lokalizasyon desteği
+│   ├── RenkPaleti.swift   # Uygulama için renk paletleri
+│   └── Sabitler.swift     # Uygulama genelindeki sabitler (örneğin, API URL’leri)
 ---
 
 ## 📸 Ekran Görüntüsü
