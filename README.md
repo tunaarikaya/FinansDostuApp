@@ -1,35 +1,73 @@
-Finans Dostumm
+# 💸 Finans Dostum(Finance Buddy) 2025 Apple Student Challenge Winner Project 🏆
 
-Finans Dostum, kişisel finans yönetimi için tasarlanmış modern ve kullanıcı dostu bir mobil uygulamadır. Bu uygulama, gelir ve giderlerinizi kolayca takip etmenize, bütçe oluşturmanıza ve finansal hedeflerinize ulaşmanıza yardımcı olur.
-
-🎨 Özellikler
-	•	Gelir ve gider takibi yapma
-	•	Finansal grafiklerle bütçe analizi
-	•	Kişisel finans hedefleri belirleme
-	•	Takvim entegrasyonu ile işlem planlama
-	•	Modern ve minimalist bir tasarım (Light/Dark tema desteği)
-
-🛠️ Kullanılan Teknolojiler
-	•	SwiftUI: Uygulama arayüzü
-	•	Swift: İş mantığı ve veri yönetimi
-	•	CoreData/SwiftData: Veritabanı ve veri saklama
-	•	Combine: Reaktif programlama desteği
-	•	Takvim API’si: İşlem planlama ve tarih yönetimi
-
-📸 Ekran Görüntüleri
-
-<img src="https://github.com/user-attachments/assets/eb23c85d-ae59-4ab2-8ca9-08910556013e" alt="Screenshot" width="300"/>
+**Finans Dostum**, kişisel bütçe kontrolünü basit, hızlı ve estetik bir deneyime dönüştüren modern bir iOS uygulamasıdır. SwiftUI ve Core Data’nın gücünü arkasına alan bu uygulama, sade arayüzü ve akıllı analizleriyle kullanıcılarına etkili bir finans yönetimi aracı sunar.
 
 
+> [📲 App Store'dan İndir](https://apps.apple.com/tr/app/finans-dostum/id6741549762) 
 
+---
 
-🗺️ Proje Yapısı
-	•	Models/: Veri modelleri
-	•	Views/: SwiftUI görünümleri
-	•	ViewModels/: İş mantığı ve veri bağlantısı
-	•	Services/: API ve yardımcı işlevler
+## ✨ Özellikler
 
-📝 Lisans
+- 🔄 **Hızlı & Minimalist Arayüz**  
+  Karmaşık grafikler ve menüler yok. Sade, sezgisel ve kullanımı kolay.
 
-Bu proje açık kaynak olup MIT Lisansı ile lisanslanmıştır.
+- 🎨 **Kişiselleştirilebilir Tasarım**  
+  Pastel renkler, karanlık mod ve sade tipografiyle rahatlatıcı bir deneyim.
 
+- 📊 **Akıllı Harcama Analizi**  
+  Sadece veri girişi değil, harcama alışkanlıklarını anlamaya yönelik dinamik grafikler ve kategorik raporlar.
+
+- 🔔 **Bütçe Hatırlatıcıları**  
+  Belirlediğin limitleri aşmamak için seni nazikçe uyaran bildirim sistemi.
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+| Teknoloji          | Kullanım Amacı                                      |
+|--------------------|-----------------------------------------------------|
+| **SwiftUI**        | Modern kullanıcı arayüzü tasarımı                   |
+| **Swift**          | Uygulama iş mantığı ve etkileşim kontrolü           |
+| **Core Data**      | Yerel veri saklama ve performanslı veri erişimi     |
+| **Combine**        | Reaktif veri akışı ve ViewModel senkronizasyonu     |
+| **SF Symbols**     | Sistem simgeleriyle tutarlı ve estetik ikonografi   |
+
+---
+
+## 🧩 Proje Yapısı
+FinansDostum/
+├── Models/          # Harcama, kategori, bütçe gibi veri modelleri
+├── Views/           # SwiftUI arayüz bileşenleri
+├── ViewModels/      # Ekran mantığı, veri işleme ve Combine entegrasyonu
+├── Core/            # Yardımcı sınıflar, veri yöneticileri, renk temaları
+├── Resources/       # Renk paletleri, sabitler, lokalizasyon desteği
+
+---
+
+## 📸 Ekran Görüntüsü
+
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/eb23c85d-ae59-4ab2-8ca9-08910556013e" width="250"/>
+</p>
+
+---
+
+## 🚧 Geliştirme Notları
+
+- Uygulama MVVM mimarisiyle yapılandırılmıştır.
+- Core Data için `@FetchRequest` ve `@Environment(\.managedObjectContext)` kullanılmıştır.
+- Uygulama içi temalar `@AppStorage` aracılığıyla kullanıcı tercihlerine göre otomatik değiştirilmektedir.
+- Bildirim sistemi OneSignal ile yapılandırılmıştır.
+
+---
+
+## 📄 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile açık kaynak olarak sunulmuştur.
+
+---
+
+## 📬 Geri Bildirim & Katkı
+
+Her türlü geri bildirime açığım. Uygulama hakkında fikirlerinizi [issue](https://github.com/senin-kullanici-adin/FinansDostum/issues) olarak paylaşabilir veya katkıda bulunmak için pull request gönderebilirsiniz.
