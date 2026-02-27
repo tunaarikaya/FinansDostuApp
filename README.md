@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💸 Finance Buddy 
+#  Finance Buddy 💸 
 **2025 Apple Swift Student Challenge Winner Project 🏆**
 
 A modern iOS application that transforms personal budget management into a simple, lightning-fast, and highly aesthetic experience. Engineered natively with SwiftUI and Core Data, it empowers users with an effective financial tool through its "Calm UI" and smart analytics.
