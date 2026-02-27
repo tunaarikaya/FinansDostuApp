@@ -1,72 +1,71 @@
-# 💸 Finans Dostum(Finance Buddy) 2025 Apple Student Challenge Winner Project 🏆
+<div align="center">
 
-**Finans Dostum**, kişisel bütçe kontrolünü basit, hızlı ve estetik bir deneyime dönüştüren modern bir iOS uygulamasıdır. SwiftUI ve Core Data’nın gücünü arkasına alan bu uygulama, sade arayüzü ve akıllı analizleriyle kullanıcılarına etkili bir finans yönetimi aracı sunar.
+# 💸 Finance Buddy (Finans Dostum)
+**2025 Apple Swift Student Challenge Winner Project 🏆**
 
+A modern iOS application that transforms personal budget management into a simple, lightning-fast, and highly aesthetic experience. Engineered natively with SwiftUI and Core Data, it empowers users with an effective financial tool through its "Calm UI" and smart analytics.
 
-> [📲 App Store'dan İndir](https://apps.apple.com/tr/app/finans-dostum/id6741549762) 
+> [📲 Download on the App Store](https://apps.apple.com/tr/app/finans-dostum/id6741549762)
 
----
-
-## ✨ Özellikler
-
-- 🔄 **Hızlı & Minimalist Arayüz**  
-  Karmaşık grafikler ve menüler yok. Sade, sezgisel ve kullanımı kolay.
-
-- 🎨 **Kişiselleştirilebilir Tasarım**  
-  Pastel renkler, karanlık mod ve sade tipografiyle rahatlatıcı bir deneyim.
-
-- 📊 **Akıllı Harcama Analizi**  
-  Sadece veri girişi değil, harcama alışkanlıklarını anlamaya yönelik dinamik grafikler ve kategorik raporlar.
-
-- 🔔 **Bütçe Hatırlatıcıları**  
-  Belirlediğin limitleri aşmamak için seni nazikçe uyaran bildirim sistemi.
+</div>
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## ✨ Features
 
-| Teknoloji          | Kullanım Amacı                                      |
-|--------------------|-----------------------------------------------------|
-| **SwiftUI**        | Modern kullanıcı arayüzü tasarımı                   |
-| **Swift**          | Uygulama iş mantığı ve etkileşim kontrolü           |
-| **Core Data**      | Yerel veri saklama ve performanslı veri erişimi     |
-| **Combine**        | Reaktif veri akışı ve ViewModel senkronizasyonu     |
-| **SF Symbols**     | Sistem simgeleriyle tutarlı ve estetik ikonografi   |
+- 🔄 **Fast & Minimalist Interface**  
+  Zero chaotic charts or complex menus. Designed for pure intuition and ease of use.
+
+- 🎨 **Customizable Design System**  
+  A deeply relaxing visual experience utilizing native typography, dark mode optimization, and soft pastel color palettes.
+
+- 📊 **Smart Spending Analytics**  
+  Beyond simple data entry: features dynamic charts and categorical reports to structurally analyze your spending habits.
+
+- 🔔 **Intelligent Budget Reminders**  
+  A gentle notification architecture that nudges you to stay safely within your predefined financial limits.
 
 ---
 
+## 🛠️ Architecture & Technologies
 
-## 📸 Ekran Görüntüsü
+| Framework / Tech | Core Purpose |
+|------------------|-----------------------------------------------------|
+| **SwiftUI**      | Designing fluid, modern, and reactive user interfaces |
+| **Swift**        | Driving complex business logic and interaction flows |
+| **Core Data**    | Ensuring secure, high-performance local data persistence |
+| **Combine**      | Orchestrating reactive data streams and ViewModel synchronization |
+| **SF Symbols**   | Providing native, accessible, and consistent iOS iconography |
 
-<p float="left">
-   <img width="250" alt="Screenshot 5" src="https://github.com/user-attachments/assets/0eaeeb15-e6b0-4afa-be67-033e222f3a30" />
-   <img width="250" alt="Screenshot 4" src="https://github.com/user-attachments/assets/5fee9962-b71d-445e-998f-4cd0e3977644" />
-   <img width="250" alt="Screenshot 3" src="https://github.com/user-attachments/assets/f15acd8c-e48c-4f76-9d6a-41fa448e9959" />
-   <img width="250" alt="Screenshot 2" src="https://github.com/user-attachments/assets/9603dc2b-08de-4dd5-8622-13b6aba5c0ce" />
-  <img width="250" alt="Screenshot 1" src="https://github.com/user-attachments/assets/95f579a9-8e9f-438a-b7d4-feec793a494f" />
- 
- 
- 
- 
+---
+
+## 📸 Screenshots
+
+<p float="left" align="center">
+   <img width="18%" alt="Screenshot 5" src="https://github.com/user-attachments/assets/0eaeeb15-e6b0-4afa-be67-033e222f3a30" />
+   <img width="18%" alt="Screenshot 4" src="https://github.com/user-attachments/assets/5fee9962-b71d-445e-998f-4cd0e3977644" />
+   <img width="18%" alt="Screenshot 3" src="https://github.com/user-attachments/assets/f15acd8c-e48c-4f76-9d6a-41fa448e9959" />
+   <img width="18%" alt="Screenshot 2" src="https://github.com/user-attachments/assets/9603dc2b-08de-4dd5-8622-13b6aba5c0ce" />
+   <img width="18%" alt="Screenshot 1" src="https://github.com/user-attachments/assets/95f579a9-8e9f-438a-b7d4-feec793a494f" />
 </p>
 
 ---
 
-## 🚧 Geliştirme Notları
+## 🚧 Engineering Notes
 
-- Uygulama MVVM mimarisiyle yapılandırılmıştır.
-- Core Data için `@FetchRequest` ve `@Environment(\.managedObjectContext)` kullanılmıştır.
-- Uygulama içi temalar `@AppStorage` aracılığıyla kullanıcı tercihlerine göre otomatik değiştirilmektedir.
-- Bildirim sistemi OneSignal ile yapılandırılmıştır.
-
----
-
-## 📄 Lisans
-
-Bu proje [MIT Lisansı](LICENSE) ile açık kaynak olarak sunulmuştur.
+- **Architecture:** The codebase is strictly structured utilizing the **MVVM** (Model-View-ViewModel) design pattern for clean separation of concerns.
+- **Data Layer:** Native integration of Core Data utilizing `@FetchRequest` and the `@Environment(\.managedObjectContext)` to ensure reactive UI updates.
+- **State Management:** In-app themes and user constraints are managed dynamically via `@AppStorage`.
+- **Push Architecture:** Remote notification infrastructure is integrated seamlessly via OneSignal.
 
 ---
 
-## 📬 Geri Bildirim & Katkı
+## 📄 License
 
-Her türlü geri bildirime açığım. Uygulama hakkında fikirlerinizi [issue](https://github.com/senin-kullanici-adin/FinansDostum/issues) olarak paylaşabilir veya katkıda bulunmak için pull request gönderebilirsiniz.
+This repository is completely open-sourced under the [MIT License](LICENSE), serving as an educational resource for the global iOS community.
+
+---
+
+## 📬 Contribution & Feedback
+
+I am highly open to community feedback. If you have any feature ideas or wish to report a bug, feel free to open an [issue](https://github.com/tunaarikaya/Finans-Dostum/issues). Pull requests are always welcome to improve the application!
